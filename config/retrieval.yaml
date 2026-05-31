@@ -1,0 +1,14 @@
+retrieval:
+  mode: "dense_only"
+  qdrant_path: "data/qdrant"
+  collection_name: "hse_programs"
+  top_k: 5
+  prefetch_limit: 20
+  rrf_k: 60
+  bm25:
+    normalizer: "pymorphy3"
+    stopwords: ["и", "в", "на", "по", "для", "ниу", "вшэ", "программа"]
+  reranker:
+    model_name: "BAAI/bge-reranker-v2-m3"
+    top_n: 5
+    device: "cpu"

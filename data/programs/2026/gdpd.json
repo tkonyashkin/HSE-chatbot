@@ -1,0 +1,44 @@
+{
+  "name": "Разработка игр и цифровых продуктов",
+  "codes": [],
+  "faculty": "Факультет компьютерных наук",
+  "degree_type": "bachelor",
+  "duration": "4 года",
+  "form": "очная",
+  "language": "русский и частично английский",
+  "description": "Уникальная комплексная программа, аналогов которой нет в России, объединяет глубокие технические знания с навыками в области дизайна, менеджмента, маркетинга и продюсирования. Программа разработана и реализуется совместно Школой дизайна и факультетом компьютерных наук НИУ ВШЭ.",
+  "what_to_study": null,
+  "advantages": null,
+  "career": null,
+  "admission_info": null,
+  "exams": [],
+  "places": {
+    "budget": null,
+    "paid": {
+      "value": 100,
+      "quote": "100 платных мест"
+    },
+    "target": null,
+    "special": null,
+    "separate": null
+  },
+  "passing_scores": [],
+  "tuition_fee_rub_per_year": null,
+  "metadata": {
+    "flags": [
+      "cooperative"
+    ]
+  },
+  "slug": "gdpd",
+  "url": "https://www.hse.ru/ba/gdpd/",
+  "admission_year": 2026,
+  "generation_metadata": {
+    "model_name": "anthropic/claude-sonnet-4.6",
+    "model_version_alias": "anthropic/claude-sonnet-4.6",
+    "extraction_date": "2026-06-02T10:06:18.365977Z"
+  },
+  "retrieved_at": "2026-06-02T10:06:18.365974Z",
+  "raw_html_hash": "sha256:6b67ff7f7ca8650b5d181a61bd8abda282a3527648c4845bbeebc1a86e6b4d2a",
+  "places_history": [],
+  "tuition_history": []
+}

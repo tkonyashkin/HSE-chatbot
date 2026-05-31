@@ -1,0 +1,270 @@
+{
+  "name": "Дизайн",
+  "codes": [
+    "10.05.01",
+    "54.03.01",
+    "27.03.05",
+    "52.05.01"
+  ],
+  "faculty": "Факультет креативных индустрий",
+  "degree_type": "bachelor",
+  "duration": "4 года",
+  "form": "очная",
+  "language": "русский и частично английский",
+  "description": "Многопрофильная программа «Дизайн» открыта на базе Школы дизайна НИУ ВШЭ. Разработанная ведущими профессионалами индустрии, программа выстроена на основе практико-ориентированного подхода. За 4 года студенты развивают проектное мышление, получают фундаментальные знания по истории и теории дизайна и искусства, осваивают современные дизайн-технологии и собирают профессиональное портфолио. Выпускники программы становятся востребованными специалистами, способными мыслить концептуально и стратегически, решать широкий круг задач, руководить творческими коллективами.",
+  "what_to_study": null,
+  "advantages": null,
+  "career": null,
+  "admission_info": null,
+  "exams": [
+    {
+      "subject": "творческое испытание",
+      "min_score": {
+        "value": 60,
+        "quote": "60"
+      }
+    },
+    {
+      "subject": "русский язык",
+      "min_score": {
+        "value": 60,
+        "quote": "60"
+      }
+    },
+    {
+      "subject": "литература",
+      "min_score": {
+        "value": 60,
+        "quote": "60"
+      }
+    }
+  ],
+  "places": {
+    "budget": {
+      "value": 65,
+      "quote": "65"
+    },
+    "paid": {
+      "value": 375,
+      "quote": "375"
+    },
+    "target": {
+      "value": 1,
+      "quote": "1 [19](#19)"
+    },
+    "special": {
+      "value": 7,
+      "quote": "7"
+    },
+    "separate": {
+      "value": 7,
+      "quote": "7"
+    }
+  },
+  "passing_scores": [
+    {
+      "year": 2023,
+      "budget": {
+        "value": 291,
+        "quote": "291"
+      },
+      "paid": null
+    },
+    {
+      "year": 2024,
+      "budget": {
+        "value": 295,
+        "quote": "295"
+      },
+      "paid": null
+    },
+    {
+      "year": 2025,
+      "budget": {
+        "value": 291,
+        "quote": "291"
+      },
+      "paid": {
+        "value": 200,
+        "quote": "200"
+      }
+    },
+    {
+      "year": 2025,
+      "budget": null,
+      "paid": {
+        "value": 201,
+        "quote": "201"
+      }
+    }
+  ],
+  "tuition_fee_rub_per_year": {
+    "value": 1080000,
+    "quote": "1080"
+  },
+  "metadata": {
+    "flags": []
+  },
+  "slug": "design",
+  "url": "https://www.hse.ru/ba/design/",
+  "admission_year": 2026,
+  "generation_metadata": {
+    "model_name": "anthropic/claude-sonnet-4.6",
+    "model_version_alias": "anthropic/claude-sonnet-4.6",
+    "extraction_date": "2026-06-02T10:00:48.645444Z"
+  },
+  "retrieved_at": "2026-06-02T10:00:48.645439Z",
+  "raw_html_hash": "sha256:2c34fbadef27f1057016ca5fae1319b8d324e60c5f9adee30079d45742a92e49",
+  "places_history": [
+    {
+      "year": 2025,
+      "places": {
+        "budget": {
+          "value": 65,
+          "quote": "65"
+        },
+        "paid": {
+          "value": 375,
+          "quote": "375"
+        },
+        "target": null,
+        "special": {
+          "value": 7,
+          "quote": "7"
+        },
+        "separate": {
+          "value": 7,
+          "quote": "7"
+        }
+      }
+    },
+    {
+      "year": 2025,
+      "places": {
+        "budget": null,
+        "paid": {
+          "value": 1,
+          "quote": "1"
+        },
+        "target": null,
+        "special": null,
+        "separate": {
+          "value": 70,
+          "quote": "70"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "places": {
+        "budget": {
+          "value": 65,
+          "quote": "65"
+        },
+        "paid": {
+          "value": 350,
+          "quote": "350"
+        },
+        "target": {
+          "value": 7,
+          "quote": "7 (в т.ч. 1 - Организация ОПК**)[[1]](#prim)"
+        },
+        "special": {
+          "value": 7,
+          "quote": "7"
+        },
+        "separate": {
+          "value": 7,
+          "quote": "7"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "places": {
+        "budget": null,
+        "paid": {
+          "value": 1,
+          "quote": "1"
+        },
+        "target": null,
+        "special": null,
+        "separate": {
+          "value": 80,
+          "quote": "80"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "places": {
+        "budget": {
+          "value": 65,
+          "quote": "65"
+        },
+        "paid": {
+          "value": 350,
+          "quote": "350"
+        },
+        "target": {
+          "value": 7,
+          "quote": "7[[13]](kolmest#first)"
+        },
+        "special": {
+          "value": 7,
+          "quote": "7"
+        },
+        "separate": {
+          "value": 7,
+          "quote": "7"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "places": {
+        "budget": null,
+        "paid": {
+          "value": 1,
+          "quote": "1"
+        },
+        "target": null,
+        "special": null,
+        "separate": {
+          "value": 80,
+          "quote": "80"
+        }
+      }
+    }
+  ],
+  "tuition_history": [
+    {
+      "year": 2024,
+      "tuition_fee_rub_per_year": {
+        "value": 800000,
+        "quote": "800"
+      }
+    },
+    {
+      "year": 2024,
+      "tuition_fee_rub_per_year": {
+        "value": 690000,
+        "quote": "690"
+      }
+    },
+    {
+      "year": 2023,
+      "tuition_fee_rub_per_year": {
+        "value": 750000,
+        "quote": "750"
+      }
+    },
+    {
+      "year": 2023,
+      "tuition_fee_rub_per_year": {
+        "value": 650000,
+        "quote": "650"
+      }
+    }
+  ]
+}

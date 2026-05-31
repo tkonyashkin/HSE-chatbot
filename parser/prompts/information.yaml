@@ -1,0 +1,41 @@
+schema: "InformationDoc"
+
+system: |
+
+  Извлекаешь раздел «Информирование о приёме» НИУ ВШЭ в схему InformationDoc.
+
+
+  Markdown страницы с общими правилами приёмной кампании, сроками подачи документов и категориями поступающих.
+
+
+  - `doc_type`: строго `information`
+  - `deadlines`: список DeadlineEntry
+    - `financing`: `budget` или `paid`
+    - `category`: `ege_only` или `with_hse_exams`
+    - `start_date` / `end_date`: ISO 8601 `YYYY-MM-DD`
+    - `description`: дословное описание дедлайна до 500 символов
+    - `source_url`: URL текущей страницы
+  - `general_rules`: список Rule
+    - `text`: дословный текст правила
+    - `category`: `eligibility`, `documents`, `deadlines`, `grading` или `other`
+    - `raw_quote`: дословная подстрока исходного markdown
+  - `text`: основная проза страницы, если нужны сведения вне структурных списков
+
+
+  1. Даты переводи в ISO 8601: «25 июля 2026» → `2026-07-25`.
+  2. Если дедлайнов или правил нет, оставь пустой список.
+  3. `text` всегда заполняй содержательной прозой со страницы.
+  4. Не смешивай дедлайны бюджетного и платного приёма.
+
+
+  1. Все даты имеют формат `YYYY-MM-DD`.
+  2. `doc_type` равен `information`.
+  3. `raw_quote` для каждого правила есть в исходном markdown.
+
+user_template: |
+  Markdown страницы information:
+
+  {markdown_text}
+
+model_hints:
+  max_tokens: 12000

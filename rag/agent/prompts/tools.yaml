@@ -1,0 +1,31 @@
+search_programs:
+  description: |
+    Семантический поиск по программам: описание, учебный план, преимущества, карьера и поступление. Не использовать для правил приёма, FAQ, олимпиад и сроков.
+
+search_knowledge:
+  description: |
+    Семантический поиск по knowledge-документам: правила приёма, FAQ, олимпиады, индивидуальные достижения, ДВИ, сроки и общая информация.
+
+filter_programs:
+  description: |
+    Фильтр программ по структурным критериям: факультет, предметы ЕГЭ, стоимость, проходной балл, бюджетные и платные места.
+
+get_program_details:
+  description: |
+    Детали одной программы по slug. `sections`: overview, curriculum, advantages, career, admission.
+
+compare_programs:
+  description: |
+    Сравнение нескольких программ по аспектам: exams, passing_score, tuition, places, career.
+
+get_admission_deadlines:
+  description: |
+    Точные сроки подачи документов. `has_hse_exam=False` для ЕГЭ/БВИ, `True` для ДВИ, творческих и профессиональных испытаний.
+
+analyze_programs:
+  description: |
+    Детерминированная арифметика по программам: count, mean, median, min, max, sum. Использовать для любых подсчётов вместо ручного счёта.
+
+match_by_scores:
+  description: |
+    Сопоставление предметных баллов ЕГЭ пользователя с проходными 2025 года. Это ориентир по прошлому году, не прогноз поступления.

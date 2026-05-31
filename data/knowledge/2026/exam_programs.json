@@ -1,0 +1,381 @@
+{
+  "doc_id": "exam_programs_2026",
+  "title": "Программы вступительных испытаний",
+  "url": "https://ba.hse.ru/intexam",
+  "admission_year": 2026,
+  "retrieved_at": "2026-05-31T18:04:59.681312Z",
+  "raw_html_hash": "sha256:674ab77a59a9404735740c6a218cdbc1141c5c16ce34e354fed1831706275bf6",
+  "generation_metadata": {
+    "model_name": "anthropic/claude-sonnet-4.6",
+    "model_version_alias": "anthropic/claude-sonnet-4.6",
+    "extraction_date": "2026-05-31T18:04:59.681365Z"
+  },
+  "doc_type": "exam_programs",
+  "exam_descriptions": [
+    {
+      "name": "Творческий конкурс для образовательной программы «Дизайн»",
+      "subjects": [],
+      "duration_min": {
+        "value": 0,
+        "quote": "Творческий конкурс для образовательной программы «Дизайн»"
+      },
+      "format": "creative",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": false,
+      "raw_quote": "Творческий конкурс для образовательной программы «Дизайн»\n\n[Творческое испытание (Дизайн)](/mirror/pubs/share/1134692818)\n\n[Творческое испытание в форме собеседования (Дизайн)](/mirror/pubs/share/1160805163.pdf)"
+    },
+    {
+      "name": "Творческий конкурс для образовательной программы «Журналистика»",
+      "subjects": [],
+      "duration_min": {
+        "value": 0,
+        "quote": "Творческий конкурс для образовательной программы «Журналистика»"
+      },
+      "format": "creative",
+      "topics": [],
+      "has_program_pdf": false,
+      "has_demo_version": false,
+      "raw_quote": "Творческий конкурс для образовательной программы «Журналистика»\n\n[Творческое испытание (Журналистика)](/mirror/pubs/share/1134693400)\n\n[Творческое испытание в форме собеседования (Журналистика)](/mirror/pubs/share/1134693090)"
+    },
+    {
+      "name": "Творческий конкурс для образовательной программы «Разработка игр и цифровых продуктов»",
+      "subjects": [],
+      "duration_min": {
+        "value": 0,
+        "quote": "Творческий конкурс для образовательной программы «Разработка игр и цифровых продуктов»"
+      },
+      "format": "creative",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": false,
+      "raw_quote": "Творческий конкурс для образовательной программы «Разработка игр и цифровых продуктов»\n\n[Творческое испытание (Разработка игр и цифровых продуктов)](/mirror/pubs/share/1134692844)\n\n[Творческое испытание в форме собеседования (Разработка игр и цифровых продуктов)](/mirror/pubs/share/1160805176.pdf)"
+    },
+    {
+      "name": "Творческий конкурс для образовательной программы «Мода»",
+      "subjects": [],
+      "duration_min": {
+        "value": 0,
+        "quote": "Творческий конкурс для образовательной программы «Мода»"
+      },
+      "format": "creative",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": false,
+      "raw_quote": "Творческий конкурс для образовательной программы «Мода»\n\n[Творческое испытание (Мода)](/mirror/pubs/share/1134692847)\n\n[Творческое испытание в форме собеседования (Мода)](/mirror/pubs/share/1160805198.pdf)"
+    },
+    {
+      "name": "Творческий конкурс для образовательной программы «Кинопроизводство»",
+      "subjects": [],
+      "duration_min": {
+        "value": 0,
+        "quote": "Творческий конкурс для образовательной программы «Кинопроизводство»"
+      },
+      "format": "creative",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": false,
+      "raw_quote": "Творческий конкурс для образовательной программы «Кинопроизводство»\n\n[Творческое испытание (Кинопроизводство)](/mirror/pubs/share/1134693126)\n\n[Творческое испытание в форме собеседования (Кинопроизводство)](/mirror/pubs/share/1160805233.pdf)"
+    },
+    {
+      "name": "Творческий конкурс для образовательной программы «Актер»",
+      "subjects": [],
+      "duration_min": {
+        "value": 0,
+        "quote": "Творческий конкурс для образовательной программы «Актер»"
+      },
+      "format": "creative",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": false,
+      "raw_quote": "Творческий конкурс для образовательной программы «Актер»\n\n[Творческое испытание (Актер)](/mirror/pubs/share/1144132230.pdf)\n\n[Творческое испытание в форме собеседования (Актер)](/mirror/pubs/share/1160805276.pdf)"
+    },
+    {
+      "name": "РУССКИЙ ЯЗЫК",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**РУССКИЙ ЯЗЫК**\n\n[Программа вступительных испытаний по русскому языку](/mirror/pubs/share/1120398209.pdf)\n\nВремя проведения – 120 минут."
+    },
+    {
+      "name": "МАТЕМАТИКА",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**МАТЕМАТИКА**\n\n[Программа вступительного испытания по математике](/mirror/pubs/share/1120421658.pdf)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "БИОЛОГИЯ",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**БИОЛОГИЯ**\n\n[Программа вступительного испытания по биологии](/mirror/pubs/share/1120442241.pdf)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "ИНФОРМАТИКА",
+      "subjects": [],
+      "duration_min": {
+        "value": 235,
+        "quote": "235 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**ИНФОРМАТИКА**\n\n[Программа вступительного испытания по информатике](/mirror/pubs/share/1120442449.pdf)\n\nВремя проведения – 235 минут."
+    },
+    {
+      "name": "ИСТОРИЯ",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**ИСТОРИЯ**\n\n[Программа вступительного испытания по истории](/mirror/pubs/share/1120442526.pdf)\n\nВремя проведения – 120 минут."
+    },
+    {
+      "name": "ЛИТЕРАТУРА",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**ЛИТЕРАТУРА**\n\n[Программа вступительного испытания по литературе](/mirror/pubs/share/1120442738.pdf)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "ОБЩЕСТВОЗНАНИЕ",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**ОБЩЕСТВОЗНАНИЕ**\n\n[Программа вступительного испытания по обществознанию](/mirror/pubs/share/1120443058.pdf)\n\nВремя проведения – 120 минут."
+    },
+    {
+      "name": "ФИЗИКА",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**ФИЗИКА**\n\n[Программа вступительного испытания по физике](/mirror/pubs/share/1120455794.pdf)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "ХИМИЯ",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**ХИМИЯ**\n\n[Программа вступительного испытания по химии](/mirror/pubs/share/1120455864.pdf)\n\nВремя проведения – 120 минут."
+    },
+    {
+      "name": "ГЕОГРАФИЯ",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**ГЕОГРАФИЯ**\n\n[Программа вступительного испытания по географии](/mirror/pubs/share/1120455918.pdf)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "АНГЛИЙСКИЙ ЯЗЫК",
+      "subjects": [],
+      "duration_min": {
+        "value": 100,
+        "quote": "100 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**АНГЛИЙСКИЙ ЯЗЫК**\n\n[Программа вступительного ипытания по английскому языку](/mirror/pubs/share/1120456018.pdf)\n\nВремя проведения – 100 минут."
+    },
+    {
+      "name": "РУССКИЙ ЯЗЫК (профессиональные вступительные испытания)",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": false,
+      "has_demo_version": false,
+      "raw_quote": "**1. РУССКИЙ ЯЗЫК**\n\nВсе направления\n\nВремя проведения – 120 минут."
+    },
+    {
+      "name": "АЛГЕБРА И НАЧАЛА МАТЕМАТИЧЕСКОГО АНАЛИЗА",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут"
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**2. АЛГЕБРА И НАЧАЛА МАТЕМАТИЧЕСКОГО АНАЛИЗА**\n\n[Программа вступительного испытания по Алгебре и началам математического анализа](/mirror/pubs/share/1120469972.pdf)\n\n[Демоверсия вступительного испытания по Алгебре и началам математического анализа](/mirror/pubs/share/1047669664.pdf)\n\n[Ответы и критерии к демоверсии вступительного испытания по Алгебре и началам математического анализа](/mirror/pubs/share/1047669694.pdf)\n\nВремя проведения – 180 минут"
+    },
+    {
+      "name": "НАУКА О ЖИЗНИ",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**3. НАУКА О ЖИЗНИ**\n\n[Программа вступительных испытаний по Науке о жизни](/mirror/pubs/share/1120470052.pdf)\n\n[Демоверсия и ответы к вступительному испытанию по Науке о жизни](/mirror/pubs/share/871242860)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "КОМПЬЮТЕРНЫЕ НАУКИ",
+      "subjects": [],
+      "duration_min": {
+        "value": 235,
+        "quote": "235 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**4. КОМПЬЮТЕРНЫЕ НАУКИ**\n\n[Программа вступительных испытаний по Компьютерным наукам](/mirror/pubs/share/1120470134.pdf)\n\n[Демоверсия вступительного испытания по Компьютерным наукам](/mirror/pubs/share/1120716274)\n\n[Ответы к демоверсии вступительного испытания по Компьютерным наукам](/mirror/pubs/share/1010608363.pdf)\n\nВремя проведения – 235 минут."
+    },
+    {
+      "name": "РОССИЙСКАЯ ГОСУДАРСТВЕННОСТЬ",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**5. РОССИЙСКАЯ ГОСУДАРСТВЕННОСТЬ**\n\n[Программа вступительного испытания по Российской государственности](/mirror/pubs/share/1120470179.pdf)\n\n[Демоверсия вступительного испытания по Российской государственности](/mirror/pubs/share/869674119.pdf)\n\n[Ответы к демоверсии вступительного испытания по Российской государственности](/mirror/pubs/share/869674158.pdf)\n\nВремя проведения – 120 минут."
+    },
+    {
+      "name": "РЕЧЕВАЯ СРЕДА",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**6. РЕЧЕВАЯ СРЕДА**\n\n[Программа вступительного испытания по Речевой среде](/mirror/pubs/share/1120470242.pdf)\n\n[Демоверсия и ответы к вступительному испытанию по Речевой среде](/mirror/pubs/share/1163340262)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "ВВЕДЕНИЕ В ОБЩЕСТВЕННЫЕ НАУКИ",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут"
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**7. ВВЕДЕНИЕ В ОБЩЕСТВЕННЫЕ НАУКИ**\n\n[Программа вступительного испытания по Введению в общественные науки](/mirror/pubs/share/1120470281.pdf)\n\n[Демоверсия и ответы к вступительному испытанию по Введению в общественные науки](/mirror/pubs/share/869674773.pdf)\n\nВремя проведения – 120 минут"
+    },
+    {
+      "name": "ЕСТЕСТВОЗНАНИЕ",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**8. ЕСТЕСТВОЗНАНИЕ**\n\n[Программа вступительного испытания по Естествознанию](/mirror/pubs/share/1120470379.pdf)\n\n[Демоверсия вступительного испытания по Естествознанию](/mirror/pubs/share/869674926.pdf)\n\n[Ответы к демоверсии вступительного испытания по Естествознанию](/mirror/pubs/share/869674957.pdf)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "МОЛЕКУЛЯРНАЯ ТЕОРИЯ СТРОЕНИЯ ВЕЩЕСТВ",
+      "subjects": [],
+      "duration_min": {
+        "value": 120,
+        "quote": "120 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**9. МОЛЕКУЛЯРНАЯ ТЕОРИЯ СТРОЕНИЯ ВЕЩЕСТВ**\n\n[Программа вступительного испытания по Молекулярной теории строения веществ](/mirror/pubs/share/1120470463.pdf)\n\n[Демоверсия и ответы к вступительному испытанию по Молекулярной теории строения веществ](/mirror/pubs/share/869675565.pdf)\n\nВремя проведения – 120 минут."
+    },
+    {
+      "name": "НАУКА О ЗЕМЛЕ",
+      "subjects": [],
+      "duration_min": {
+        "value": 180,
+        "quote": "180 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**10. НАУКА О ЗЕМЛЕ**\n\n[Программа вступительного испытания по Науке о земле](/mirror/pubs/share/1120470576.pdf)\n\n[Демоверсия и ответы к вступительному испытанию по Науке о земле](/mirror/pubs/share/904208365)\n\nВремя проведения – 180 минут."
+    },
+    {
+      "name": "ЯЗЫКОВЫЕ НАВЫКИ/LANGUAGE SKILLS",
+      "subjects": [],
+      "duration_min": {
+        "value": 100,
+        "quote": "100 минут."
+      },
+      "format": "written",
+      "topics": [],
+      "has_program_pdf": true,
+      "has_demo_version": true,
+      "raw_quote": "**11. ЯЗЫКОВЫЕ НАВЫКИ/LANGUAGE SKILLS**\n\nВсе направления\n\n[Программа вступительного испытания по Языковым навыкам](/mirror/pubs/share/1120470665.pdf)\n\n[Демоверсия и ответы к вступительному испытанию по Языковым навыкам](/mirror/pubs/share/869675958.zip)\n\nВремя проведения – 100 минут."
+    }
+  ],
+  "text": "Программы вступительных испытаний для поступающих в бакалавриат/специалитет НИУ ВШЭ в 2026 году\n\nПри поступлении в Национальный исследовательский университет «Высшая школа экономики» (НИУ ВШЭ) абитуриенты предоставляют результаты вступительных испытаний. Для ряда образовательных программ требуется прохождение творческих испытаний, которые позволяют оценить творческие способности и креативный потенциал поступающих.\n\nПодробная информация о каждом виде вступительных испытаний, включая методические материалы и демонстрационные варианты заданий, доступна ниже."
+}

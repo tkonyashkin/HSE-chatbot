@@ -1,0 +1,49 @@
+
+data_root: "data"
+year_default: 2026
+catalog_url: "https://ba.hse.ru/"
+program_url_pattern: "https://www.hse.ru/ba/{slug}/"
+information_url: "https://ba.hse.ru/information"
+knowledge_urls:
+  information: "https://ba.hse.ru/information"
+  olympiads: "https://ba.hse.ru/olimpinfo"
+  achievements: "https://ba.hse.ru/dost"
+  exam_programs: "https://ba.hse.ru/intexam"
+  faq: "https://ba.hse.ru/faq"
+knowledge_titles:
+  information: "Информирование о приёме"
+  olympiads: "Олимпиады и льготы"
+  achievements: "Индивидуальные достижения"
+  exam_programs: "Программы вступительных испытаний"
+  faq: "Частые вопросы"
+tables:
+  minkrit:
+    "2026": "https://ba.hse.ru/minkrit"
+  kolmest:
+    "2023": "https://ba.hse.ru/kolmest2023"
+    "2024": "https://ba.hse.ru/kolmest24"
+    "2025": "https://ba.hse.ru/kolmest25"
+    "2026": "https://ba.hse.ru/kolmest"
+  price:
+    "2023": "https://ba.hse.ru/price2023"
+    "2024": "https://ba.hse.ru/price24"
+    "2026": "https://ba.hse.ru/price"
+  results:
+    "2023": "https://ba.hse.ru/result2023"
+    "2024": "https://ba.hse.ru/result2024"
+    "2025": "https://ba.hse.ru/result2025"
+url_classifier:
+  "/information": "information"
+  "/olimpinfo": "olympiads"
+  "/dost": "achievements"
+  "/intexam": "exam_programs"
+  "/faq": "faq"
+  "/minkrit": "minkrit"
+  "/kolmest": "kolmest"
+  "/price": "price"
+  "/result2023": "results:2023"
+  "/result2024": "results:2024"
+  "/result2025": "results:2025"
+auxiliary_slugs:
+  - faq
+  - rules

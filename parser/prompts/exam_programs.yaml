@@ -1,0 +1,46 @@
+schema: "ExamProgramsDoc"
+
+system: |
+
+  Извлекаешь страницу `/intexam` НИУ ВШЭ в схему ExamProgramsDoc.
+
+
+  Markdown страницы с программами ДВИ, творческих и профессиональных испытаний. PDF-содержимое не входит во вход.
+
+
+  - `doc_type`: строго `exam_programs`
+  - `exam_descriptions`: список ExamDescription
+    - `name`: полное название экзамена
+    - `subjects`: список русских названий предметов
+    - `duration_min`: QuotedInt для длительности в минутах
+    - `format`: `written`, `oral`, `test`, `creative` или `mixed`
+    - `topics`: темы, если они перечислены прямо на странице
+    - `has_program_pdf`: true, если есть ссылка на программу экзамена
+    - `has_demo_version`: true, если есть ссылка на демонстрационный вариант
+    - `raw_quote`: дословный фрагмент markdown про экзамен
+  - `text`: основная проза страницы
+
+
+  1. Для «180 минут» верни `duration_min.value=180`, `quote="180 минут"`.
+  2. Если темы перечислены только в PDF, `topics` оставь пустым списком.
+  3. `has_program_pdf=true`, если на странице есть ссылка «программа экзамена», «скачать программу» или PDF с программой.
+  4. `has_demo_version=true`, если есть ссылка на демоверсию или демонстрационный вариант.
+  5. Для `raw_quote` бери короткий соседний фрагмент. Не склеивай несоседние строки.
+
+
+  - Содержимое PDF.
+  - URL PDF-ссылок.
+  - Темы экзамена, если они есть только в PDF.
+
+
+  1. `doc_type` равен `exam_programs`.
+  2. `raw_quote` дословно содержится в markdown.
+  3. Флаги PDF/демоверсии отражают наличие ссылок, а не содержание PDF.
+
+user_template: |
+  Markdown страницы intexam:
+
+  {markdown_text}
+
+model_hints:
+  max_tokens: 10000

@@ -1,0 +1,144 @@
+{
+  "name": "Современное искусство",
+  "codes": [
+    "10.05.01",
+    "50.03.02",
+    "27.03.05"
+  ],
+  "faculty": "Факультет креативных индустрий",
+  "degree_type": "bachelor",
+  "duration": "4 года",
+  "form": "очная",
+  "language": "русский и частично английский",
+  "description": "Бакалаврская программа «Современное искусство» Школы дизайна НИУ ВШЭ готовит художников и кураторов, фотографов, кинематографистов и саунд-артистов, теоретиков и практиков во всех областях современного искусства. Обучение включает глубокое погружение в теорию, историю и философию искусства, критическую теорию и проведение визуальных исследований. Параллельно под руководством мастеров студенты овладевают навыками построения художественной практики, создают собственные арт-проекты, регулярно участвуют в индивидуальных и групповых выставках, которые проходят на внешних площадках и в стенах HSE ART GALLERY.",
+  "what_to_study": null,
+  "advantages": null,
+  "career": null,
+  "admission_info": null,
+  "exams": [
+    {
+      "subject": "русский язык",
+      "min_score": {
+        "value": 60,
+        "quote": "60"
+      }
+    },
+    {
+      "subject": "литература",
+      "min_score": {
+        "value": 60,
+        "quote": "60"
+      }
+    },
+    {
+      "subject": "иностранный язык/обществознание/история",
+      "min_score": {
+        "value": 60,
+        "quote": "60"
+      }
+    }
+  ],
+  "places": {
+    "budget": null,
+    "paid": {
+      "value": 60,
+      "quote": "60"
+    },
+    "target": null,
+    "special": null,
+    "separate": null
+  },
+  "passing_scores": [
+    {
+      "year": 2025,
+      "budget": null,
+      "paid": {
+        "value": 197,
+        "quote": "197"
+      }
+    }
+  ],
+  "tuition_fee_rub_per_year": {
+    "value": 750000,
+    "quote": "750"
+  },
+  "metadata": {
+    "flags": []
+  },
+  "slug": "art",
+  "url": "https://www.hse.ru/ba/art/",
+  "admission_year": 2026,
+  "generation_metadata": {
+    "model_name": "anthropic/claude-sonnet-4.6",
+    "model_version_alias": "anthropic/claude-sonnet-4.6",
+    "extraction_date": "2026-06-02T09:55:56.402557Z"
+  },
+  "retrieved_at": "2026-06-02T09:55:56.402554Z",
+  "raw_html_hash": "sha256:ad2d63dbdccb4a432380b1632d120b2cbab196ee5d6ca5c0c25411154a372bb1",
+  "places_history": [
+    {
+      "year": 2025,
+      "places": {
+        "budget": null,
+        "paid": {
+          "value": 1,
+          "quote": "1"
+        },
+        "target": null,
+        "special": null,
+        "separate": {
+          "value": 60,
+          "quote": "60"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "places": {
+        "budget": null,
+        "paid": {
+          "value": 1,
+          "quote": "1"
+        },
+        "target": null,
+        "special": null,
+        "separate": {
+          "value": 60,
+          "quote": "60"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "places": {
+        "budget": null,
+        "paid": {
+          "value": 1,
+          "quote": "1"
+        },
+        "target": null,
+        "special": null,
+        "separate": {
+          "value": 60,
+          "quote": "60"
+        }
+      }
+    }
+  ],
+  "tuition_history": [
+    {
+      "year": 2024,
+      "tuition_fee_rub_per_year": {
+        "value": 590000,
+        "quote": "590"
+      }
+    },
+    {
+      "year": 2023,
+      "tuition_fee_rub_per_year": {
+        "value": 590000,
+        "quote": "590"
+      }
+    }
+  ]
+}

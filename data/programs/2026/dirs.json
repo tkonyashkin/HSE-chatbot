@@ -1,0 +1,81 @@
+{
+  "name": "Проектирование интеллектуальных робототехнических систем",
+  "codes": [
+    "04.03.02",
+    "09.03.04"
+  ],
+  "faculty": "Факультет компьютерных наук",
+  "degree_type": "bachelor",
+  "duration": "4 года",
+  "form": "очная",
+  "language": "русский и частично английский",
+  "description": "Программа направлена на подготовку специалистов на стыке информационных технологий, искусственного интеллекта и робототехники. Она готовит квалифицированных разработчиков и архитекторов программного обеспечения для киберфизических систем, инженеров по робототехнике, а также менеджеров по качеству сложных программно-аппаратных комплексов.\n\nПрограмма участвует в инициативе Яндекс Физикал ИИ, созданной Яндексом вместе с ведущими техническими вузами России.",
+  "what_to_study": null,
+  "advantages": null,
+  "career": null,
+  "admission_info": null,
+  "exams": [
+    {
+      "subject": "математика",
+      "min_score": {
+        "value": 70,
+        "quote": "70"
+      }
+    },
+    {
+      "subject": "информатика/физика",
+      "min_score": {
+        "value": 70,
+        "quote": "70"
+      }
+    },
+    {
+      "subject": "русский язык",
+      "min_score": {
+        "value": 60,
+        "quote": "60"
+      }
+    }
+  ],
+  "places": {
+    "budget": {
+      "value": 25,
+      "quote": "25"
+    },
+    "paid": {
+      "value": 35,
+      "quote": "35"
+    },
+    "target": null,
+    "special": {
+      "value": 3,
+      "quote": "3"
+    },
+    "separate": {
+      "value": 3,
+      "quote": "3"
+    }
+  },
+  "passing_scores": [],
+  "tuition_fee_rub_per_year": {
+    "value": 950000,
+    "quote": "950"
+  },
+  "metadata": {
+    "flags": [
+      "cooperative"
+    ]
+  },
+  "slug": "dirs",
+  "url": "https://www.hse.ru/ba/dirs/",
+  "admission_year": 2026,
+  "generation_metadata": {
+    "model_name": "anthropic/claude-sonnet-4.6",
+    "model_version_alias": "anthropic/claude-sonnet-4.6",
+    "extraction_date": "2026-06-02T10:02:06.910206Z"
+  },
+  "retrieved_at": "2026-06-02T10:02:06.910200Z",
+  "raw_html_hash": "sha256:7b2a72cd55d0b0f42ba8247ef87749ac58cddb163afbb72f05345c40569920e1",
+  "places_history": [],
+  "tuition_history": []
+}

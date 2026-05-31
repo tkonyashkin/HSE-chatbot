@@ -1,0 +1,76 @@
+[project]
+name = "chatbot"
+version = "0.1.0"
+description = "RAG-based Telegram chatbot for HSE bachelor admission queries"
+requires-python = ">=3.11"
+dependencies = [
+    "aiogram>=3.14.0",
+    "beautifulsoup4>=4.14.3",
+    "deepeval>=4.0.5",
+    "markdownify>=1.2.2",
+    "openai>=2.36.0",
+    "pandas>=3.0.2",
+    "pydantic>=2.13.4",
+    "pydantic-ai>=1.93.0",
+    "pymorphy3>=2.0",
+    "python-dotenv>=1.2.2",
+    "pyyaml>=6.0.3",
+    "qdrant-client>=1.17.1",
+    "rank-bm25>=0.2.2",
+    "requests>=2.33.1",
+    "sentence-transformers>=5.4.1",
+    "sentencepiece>=0.2.1",
+    "structlog>=25.5.0",
+    "tenacity>=9.1.4",
+    "trafilatura>=2.0.0",
+    "typer>=0.25.1",
+]
+
+[project.scripts]
+hse-parser = "parser.cli:app"
+hse-rag = "rag.cli:app"
+hse-bot = "bot.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["parser", "rag", "bot"]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.0.0",
+    "pre-commit>=4.6.0",
+    "ruff>=0.15.12",
+    "types-beautifulsoup4>=4.12.0.20250516",
+    "types-pyyaml>=6.0.12.20260510",
+    "types-requests>=2.33.0.20260508",
+    "types-tqdm>=4.67.3.20260508",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"parser/cli.py" = ["B008"]
+"rag/cli.py" = ["B008"]
+"bot/handlers.py" = ["B008"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "bot.handlers"
+disallow_untyped_decorators = false
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+exclude = ["legacy", ".venv", "**/__pycache__"]

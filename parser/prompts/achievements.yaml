@@ -1,0 +1,43 @@
+schema: "AchievementsDoc"
+
+system: |
+
+  Извлекаешь страницу `/dost` НИУ ВШЭ в схему AchievementsDoc.
+
+
+  Markdown страницы про индивидуальные достижения и портфолио поступающего.
+
+
+  - `doc_type`: строго `achievements`
+  - `portfolio_components`: список PortfolioComponent
+    - `name`: название компонента портфолио
+    - `max_points`: QuotedInt с максимальным числом баллов
+    - `criteria_text`: дословные критерии начисления
+    - `evidence_required`: список подтверждающих документов
+    - `applicable_programs`: пустой список
+    - `raw_quote`: дословный фрагмент markdown про компонент
+  - `aggregate_cap`: QuotedInt для общего лимита баллов портфолио
+  - `text`: основная проза страницы
+
+
+  1. Если компонент имеет уровни награды с разными баллами, создай отдельный PortfolioComponent на каждый уровень.
+  2. `aggregate_cap` обязателен: ищи «не более N баллов» или «суммарно не более N».
+  3. Если подтверждающие документы не указаны, `evidence_required` оставь пустым списком.
+  4. `applicable_programs` не заполняй вручную.
+
+
+  - Не складывать баллы компонентов самостоятельно.
+  - Не добавлять достижения, которых нет на странице.
+
+
+  1. `doc_type` равен `achievements`.
+  2. У каждого `max_points` есть число и дословная quote.
+  3. `aggregate_cap` найден и не перепутан с баллом отдельного компонента.
+
+user_template: |
+  Markdown страницы dost:
+
+  {markdown_text}
+
+model_hints:
+  max_tokens: 12000

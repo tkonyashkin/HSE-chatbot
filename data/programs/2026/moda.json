@@ -1,0 +1,45 @@
+{
+  "name": "Мода",
+  "codes": [],
+  "faculty": "Факультет креативных индустрий",
+  "degree_type": "bachelor",
+  "duration": "4 года",
+  "form": "очная",
+  "language": "русский и частично английский",
+  "description": "В Школе дизайна НИУ ВШЭ идет набор на бакалаврскую программу «Мода». Обучение ориентировано на постоянную практику, поэтому кроме изучения истории и теории костюма, студенты ежегодно защищают по четыре полноценных фэшн-проекта. Под кураторством профессионалов индустрии они создают изделия и модные коллекции, проводят фотосессии, изучают стайлинг, мерчандайзинг, ритейл, основы продвижения бренда. Уже во время учебы студенты регулярно участвуют в фэшн-показах на ведущих площадках Москвы, побеждают в международных конкурсах, вступают в успешные коллаборации с глобальными брендами.",
+  "what_to_study": null,
+  "advantages": null,
+  "career": null,
+  "admission_info": null,
+  "exams": [],
+  "places": {
+    "budget": {
+      "value": 65,
+      "quote": "65 бюджетных мест"
+    },
+    "paid": {
+      "value": 90,
+      "quote": "90 платных мест"
+    },
+    "target": null,
+    "special": null,
+    "separate": null
+  },
+  "passing_scores": [],
+  "tuition_fee_rub_per_year": null,
+  "metadata": {
+    "flags": []
+  },
+  "slug": "moda",
+  "url": "https://www.hse.ru/ba/moda/",
+  "admission_year": 2026,
+  "generation_metadata": {
+    "model_name": "anthropic/claude-sonnet-4.6",
+    "model_version_alias": "anthropic/claude-sonnet-4.6",
+    "extraction_date": "2026-06-02T10:17:38.284606Z"
+  },
+  "retrieved_at": "2026-06-02T10:17:38.284604Z",
+  "raw_html_hash": "sha256:617840623d26d57a0bc2cb337b0d16b93516ed1be927a77374769c5e029e816d",
+  "places_history": [],
+  "tuition_history": []
+}

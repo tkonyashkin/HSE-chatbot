@@ -1,0 +1,10 @@
+{
+  "model_id": "deepseek/deepseek-v4-flash",
+  "variant": "llm_deepseek_v4_flash_reasoning_on",
+  "n_queries": 140.0,
+  "latency_p50_ms": 24895.09895849228,
+  "latency_p95_ms": 81743.87416875959,
+  "avg_input_tokens": 2337.942857142857,
+  "avg_output_tokens": 2715.042857142857,
+  "cost_per_100q_usd": 0.07635972085714285
+}

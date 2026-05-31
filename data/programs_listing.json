@@ -1,0 +1,337 @@
+[
+  {
+    "slug": "geography",
+    "name": "География глобальных изменений и геоинформационные технологии",
+    "url": "https://www.hse.ru/ba/geography/"
+  },
+  {
+    "slug": "cmb",
+    "name": "Клеточная и молекулярная биотехнология",
+    "url": "https://www.hse.ru/ba/cmb/"
+  },
+  {
+    "slug": "neuroscience",
+    "name": "Когнитивная нейробиология",
+    "url": "https://www.hse.ru/ba/neuroscience/"
+  },
+  {
+    "slug": "math",
+    "name": "Математика",
+    "url": "https://www.hse.ru/ba/math/"
+  },
+  {
+    "slug": "cpm",
+    "name": "Совместный бакалавриат НИУ ВШЭ и ЦПМ",
+    "url": "https://www.hse.ru/ba/cpm/"
+  },
+  {
+    "slug": "physics",
+    "name": "Физика",
+    "url": "https://www.hse.ru/ba/physics/"
+  },
+  {
+    "slug": "chem",
+    "name": "Химия",
+    "url": "https://www.hse.ru/ba/chem/"
+  },
+  {
+    "slug": "materials",
+    "name": "Химия новых материалов",
+    "url": "https://www.hse.ru/ba/materials/"
+  },
+  {
+    "slug": "drip",
+    "name": "Дизайн и разработка информационных продуктов",
+    "url": "https://www.hse.ru/ba/drip/"
+  },
+  {
+    "slug": "compds",
+    "name": "Компьютерные науки и анализ данных",
+    "url": "https://www.hse.ru/ba/compds/"
+  },
+  {
+    "slug": "ami",
+    "name": "Прикладная математика и информатика",
+    "url": "https://www.hse.ru/ba/ami/"
+  },
+  {
+    "slug": "data",
+    "name": "Прикладной анализ данных",
+    "url": "https://www.hse.ru/ba/data/"
+  },
+  {
+    "slug": "se",
+    "name": "Программная инженерия",
+    "url": "https://www.hse.ru/ba/se/"
+  },
+  {
+    "slug": "dirs",
+    "name": "Проектирование интеллектуальных робототехнических систем",
+    "url": "https://www.hse.ru/ba/dirs/"
+  },
+  {
+    "slug": "gdpd",
+    "name": "Разработка игр и цифровых продуктов",
+    "url": "https://www.hse.ru/ba/gdpd/"
+  },
+  {
+    "slug": "it",
+    "name": "Цифровые технологии и телекоммуникации",
+    "url": "https://www.hse.ru/ba/it/"
+  },
+  {
+    "slug": "isct",
+    "name": "Информатика и вычислительная техника",
+    "url": "https://www.hse.ru/ba/isct/"
+  },
+  {
+    "slug": "is",
+    "name": "Информационная безопасность",
+    "url": "https://www.hse.ru/ba/is/"
+  },
+  {
+    "slug": "cosec",
+    "name": "Компьютерная безопасность",
+    "url": "https://www.hse.ru/ba/cosec/"
+  },
+  {
+    "slug": "am",
+    "name": "Прикладная математика",
+    "url": "https://www.hse.ru/ba/am/"
+  },
+  {
+    "slug": "digitalcomm",
+    "name": "Глобальные цифровые коммуникации",
+    "url": "https://www.hse.ru/ba/digitalcomm/"
+  },
+  {
+    "slug": "design",
+    "name": "Дизайн",
+    "url": "https://www.hse.ru/ba/design/"
+  },
+  {
+    "slug": "journ",
+    "name": "Журналистика",
+    "url": "https://www.hse.ru/ba/journ/"
+  },
+  {
+    "slug": "film",
+    "name": "Кинопроизводство",
+    "url": "https://www.hse.ru/ba/film/"
+  },
+  {
+    "slug": "media",
+    "name": "Медиакоммуникации",
+    "url": "https://www.hse.ru/ba/media/"
+  },
+  {
+    "slug": "moda",
+    "name": "Мода",
+    "url": "https://www.hse.ru/ba/moda/"
+  },
+  {
+    "slug": "ad",
+    "name": "Реклама и связи с общественностью",
+    "url": "https://www.hse.ru/ba/ad/"
+  },
+  {
+    "slug": "art",
+    "name": "Современное искусство",
+    "url": "https://www.hse.ru/ba/art/"
+  },
+  {
+    "slug": "producer",
+    "name": "Стратегия и продюсирование в коммуникациях",
+    "url": "https://www.hse.ru/ba/producer/"
+  },
+  {
+    "slug": "creative",
+    "name": "Управление в креативных индустриях",
+    "url": "https://www.hse.ru/ba/creative/"
+  },
+  {
+    "slug": "we",
+    "name": "Мировая экономика",
+    "url": "https://www.hse.ru/ba/we/"
+  },
+  {
+    "slug": "icef",
+    "name": "Международная программа по экономике и финансам",
+    "url": "https://www.hse.ru/ba/icef/"
+  },
+  {
+    "slug": "nes",
+    "name": "Совместная программа по экономике НИУ ВШЭ и РЭШ",
+    "url": "https://www.hse.ru/ba/nes/"
+  },
+  {
+    "slug": "economics",
+    "name": "Экономика",
+    "url": "https://www.hse.ru/ba/economics/"
+  },
+  {
+    "slug": "eda",
+    "name": "Экономика и анализ данных",
+    "url": "https://www.hse.ru/ba/eda/"
+  },
+  {
+    "slug": "stat",
+    "name": "Экономика и статистика",
+    "url": "https://www.hse.ru/ba/stat/"
+  },
+  {
+    "slug": "ea",
+    "name": "Экономический анализ",
+    "url": "https://www.hse.ru/ba/ea/"
+  },
+  {
+    "slug": "bi",
+    "name": "Бизнес-информатика",
+    "url": "https://www.hse.ru/ba/bi/"
+  },
+  {
+    "slug": "gmu",
+    "name": "Государственное и муниципальное управление",
+    "url": "https://www.hse.ru/ba/gmu/"
+  },
+  {
+    "slug": "marketing",
+    "name": "Маркетинг и рыночная аналитика",
+    "url": "https://www.hse.ru/ba/marketing/"
+  },
+  {
+    "slug": "ib",
+    "name": "Международный бизнес",
+    "url": "https://www.hse.ru/ba/ib/"
+  },
+  {
+    "slug": "bba",
+    "name": "Управление бизнесом",
+    "url": "https://www.hse.ru/ba/bba/"
+  },
+  {
+    "slug": "tim",
+    "name": "Управление технологическими инновациями",
+    "url": "https://www.hse.ru/ba/tim/"
+  },
+  {
+    "slug": "digital",
+    "name": "Управление цифровым продуктом",
+    "url": "https://www.hse.ru/ba/digital/"
+  },
+  {
+    "slug": "dat",
+    "name": "Технологии анализа данных в бизнесе",
+    "url": "https://www.hse.ru/ba/dat/"
+  },
+  {
+    "slug": "law",
+    "name": "Юриспруденция",
+    "url": "https://www.hse.ru/ba/law/"
+  },
+  {
+    "slug": "dlawyer",
+    "name": "Юриспруденция: цифровой юрист",
+    "url": "https://www.hse.ru/ba/dlawyer/"
+  },
+  {
+    "slug": "up",
+    "name": "Девелопмент и городское планирование",
+    "url": "https://www.hse.ru/ba/up/"
+  },
+  {
+    "slug": "actor",
+    "name": "Актер",
+    "url": "https://www.hse.ru/ba/actor/"
+  },
+  {
+    "slug": "arabic",
+    "name": "Арабский мир и Христианский Восток",
+    "url": "https://www.hse.ru/ba/arabic/"
+  },
+  {
+    "slug": "oriental",
+    "name": "Востоковедение",
+    "url": "https://www.hse.ru/ba/oriental/"
+  },
+  {
+    "slug": "lang",
+    "name": "Иностранные языки и межкультурная коммуникация",
+    "url": "https://www.hse.ru/ba/lang/"
+  },
+  {
+    "slug": "iran",
+    "name": "Иран и Центральная Азия",
+    "url": "https://www.hse.ru/ba/iran/"
+  },
+  {
+    "slug": "hist",
+    "name": "История",
+    "url": "https://www.hse.ru/ba/hist/"
+  },
+  {
+    "slug": "histart",
+    "name": "История искусств",
+    "url": "https://www.hse.ru/ba/histart/"
+  },
+  {
+    "slug": "chinese",
+    "name": "Китай: язык, культура, общество",
+    "url": "https://www.hse.ru/ba/chinese/"
+  },
+  {
+    "slug": "antiq",
+    "name": "Классическая филология",
+    "url": "https://www.hse.ru/ba/antiq/"
+  },
+  {
+    "slug": "cultural",
+    "name": "Культурология",
+    "url": "https://www.hse.ru/ba/cultural/"
+  },
+  {
+    "slug": "philology",
+    "name": "Современная филология",
+    "url": "https://www.hse.ru/ba/philology/"
+  },
+  {
+    "slug": "phil",
+    "name": "Практическая философия",
+    "url": "https://www.hse.ru/ba/phil/"
+  },
+  {
+    "slug": "ling",
+    "name": "Фундаментальная и компьютерная лингвистика",
+    "url": "https://www.hse.ru/ba/ling/"
+  },
+  {
+    "slug": "ir",
+    "name": "Международная программа «Международные отношения и глобальные исследования»",
+    "url": "https://www.hse.ru/ba/ir/"
+  },
+  {
+    "slug": "ia",
+    "name": "Международные отношения",
+    "url": "https://www.hse.ru/ba/ia/"
+  },
+  {
+    "slug": "epa",
+    "name": "Программа двух дипломов НИУ ВШЭ и Университета Кёнхи «Экономика и политика в Азии»",
+    "url": "https://www.hse.ru/ba/epa/"
+  },
+  {
+    "slug": "political",
+    "name": "Политология",
+    "url": "https://www.hse.ru/ba/political/"
+  },
+  {
+    "slug": "psy",
+    "name": "Психология",
+    "url": "https://www.hse.ru/ba/psy/"
+  },
+  {
+    "slug": "soc",
+    "name": "Социология",
+    "url": "https://www.hse.ru/ba/soc/"
+  }
+]

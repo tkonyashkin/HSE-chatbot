@@ -1,0 +1,23 @@
+chunking:
+  default_profile: "structural_context_header"
+  profiles:
+    structural_no_header:
+      min_text_chars: 100
+      context_header_mode: "none"
+      max_tokens_per_chunk: 460
+      short_section_mode: "merge_into_overview"
+    structural_context_header:
+      min_text_chars: 100
+      context_header_mode: "simple"
+      max_tokens_per_chunk: 460
+      short_section_mode: "merge_into_overview"
+    structural_soft_cap:
+      min_text_chars: 0
+      context_header_mode: "simple"
+      max_tokens_per_chunk: 300
+      short_section_mode: "preserve"
+    small:
+      min_text_chars: 50
+      context_header_mode: "simple"
+      max_tokens_per_chunk: 200
+      short_section_mode: "preserve"
