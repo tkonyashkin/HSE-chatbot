@@ -10,6 +10,7 @@ from pydantic_ai import Agent, RunContext
 from pydantic_ai.exceptions import UsageLimitExceeded
 from pydantic_ai.usage import UsageLimits
 
+from rag.agent import tools
 from rag.agent.context import AgentContext
 from rag.agent.llm_adapter import build_pydantic_ai_model
 from rag.agent.planner import Intent, Plan, build_plan, format_plan_for_worker
@@ -25,27 +26,6 @@ from rag.agent.schemas import (
     ProgramFilter,
     ProgramHit,
     ProgramSummary,
-)
-from rag.agent.tools import (
-    analyze_programs as _analyze_programs,
-)
-from rag.agent.tools import (
-    compare_programs as _compare_programs,
-)
-from rag.agent.tools import (
-    filter_programs as _filter_programs,
-)
-from rag.agent.tools import (
-    get_admission_deadlines as _get_admission_deadlines,
-)
-from rag.agent.tools import (
-    get_program_details as _get_program_details,
-)
-from rag.agent.tools import (
-    match_by_scores as _match_by_scores,
-)
-from rag.agent.tools import (
-    search_programs as _search_programs,
 )
 from rag.agent.tools import tool_description
 
@@ -98,31 +78,31 @@ def build_agent(
     async def search_programs(
         ctx: RunContext[AgentContext], /, query: str, top_k: int = 5
     ) -> list[ProgramHit]:
-        return _search_programs(ctx.deps, query=query, top_k=top_k, corpus="programs")
+        return tools.search_programs(ctx.deps, query=query, top_k=top_k, corpus="programs")
 
     @agent.tool(description=tool_description("search_knowledge"))
     async def search_knowledge(
         ctx: RunContext[AgentContext], /, query: str, top_k: int = 5
     ) -> list[ProgramHit]:
-        return _search_programs(ctx.deps, query=query, top_k=top_k, corpus="knowledge")
+        return tools.search_programs(ctx.deps, query=query, top_k=top_k, corpus="knowledge")
 
     @agent.tool(description=tool_description("filter_programs"))
     async def filter_programs(
         ctx: RunContext[AgentContext], /, filter_: ProgramFilter
     ) -> list[ProgramSummary]:
-        return _filter_programs(ctx.deps, filter_)
+        return tools.filter_programs(ctx.deps, filter_)
 
     @agent.tool(description=tool_description("get_program_details"))
     async def get_program_details(
         ctx: RunContext[AgentContext], /, slug: str, sections: list[str]
     ) -> ProgramDetails | None:
-        return _get_program_details(ctx.deps, slug=slug, sections=sections)
+        return tools.get_program_details(ctx.deps, slug=slug, sections=sections)
 
     @agent.tool(description=tool_description("compare_programs"))
     async def compare_programs(
         ctx: RunContext[AgentContext], /, slugs: list[str], aspects: list[str]
     ) -> ComparisonTable:
-        return _compare_programs(ctx.deps, slugs=slugs, aspects=aspects)
+        return tools.compare_programs(ctx.deps, slugs=slugs, aspects=aspects)
 
     @agent.tool(description=tool_description("get_admission_deadlines"))
     async def get_admission_deadlines(
@@ -130,7 +110,7 @@ def build_agent(
         /,
         has_hse_exam: bool,
     ) -> list[AdmissionDeadline]:
-        return _get_admission_deadlines(ctx.deps, has_hse_exam=has_hse_exam)
+        return tools.get_admission_deadlines(ctx.deps, has_hse_exam=has_hse_exam)
 
     @agent.tool(description=tool_description("analyze_programs"))
     async def analyze_programs(
@@ -141,7 +121,7 @@ def build_agent(
         filter_: ProgramFilter | None = None,
         group_by: GroupByField = "none",
     ) -> AnalysisResult:
-        return _analyze_programs(
+        return tools.analyze_programs(
             ctx.deps,
             operation=operation,
             field=field,
@@ -155,7 +135,7 @@ def build_agent(
         /,
         user_scores: dict[str, int],
     ) -> MatchResult:
-        return _match_by_scores(ctx.deps, user_scores=user_scores)
+        return tools.match_by_scores(ctx.deps, user_scores=user_scores)
 
     return agent
 

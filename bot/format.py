@@ -13,6 +13,7 @@ ITALIC_STAR_RE = re.compile(r"(?<![*\w])\*([^*\n]+)\*(?![*\w])")
 ITALIC_UNDER_RE = re.compile(r"(?<![_\w])_([^_\n]+)_(?![_\w])")
 TABLE_ROW_RE = re.compile(r"^\s*\|(.+)\|\s*$")
 TABLE_SEP_RE = re.compile(r"^\s*\|[\s:|\-]+\|\s*$")
+NEWLINE_COLLAPSE_RE = re.compile(r"\n{3,}")
 
 
 def escape_html(text: str) -> str:
@@ -105,5 +106,5 @@ def md_to_telegram_html(text: str) -> str:
     for key, content in placeholders.items():
         text = text.replace(key, content)
 
-    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+    text = NEWLINE_COLLAPSE_RE.sub("\n\n", text).strip()
     return text

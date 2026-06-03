@@ -15,6 +15,7 @@ from deepeval.models.base_model import DeepEvalBaseLLM
 from deepeval.test_case import LLMTestCase, SingleTurnParams
 from openai import OpenAI
 
+from rag.experiments.paths import safe_model_slug
 from rag.schemas import RetrievalHit
 
 
@@ -229,7 +230,5 @@ def build_judge(
     cache_dir: Path = Path("experiments/cache"),
     model_id: str | None = None,
 ) -> CachedDeepEvalJudge:
-    suffix = ""
-    if model_id:
-        suffix = "_" + model_id.replace("/", "_").replace("-", "_").replace(".", "_")
+    suffix = f"_{safe_model_slug(model_id)}" if model_id else ""
     return CachedDeepEvalJudge(cache_dir / f"deepeval_judge{suffix}.json", model_id=model_id)

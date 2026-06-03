@@ -7,16 +7,13 @@ from datetime import timedelta
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from dotenv import load_dotenv
-from pydantic import TypeAdapter
 
 from bot.config import BotConfig
 from bot.conversation import ConversationStore
 from bot.handlers import HandlersDeps, router, set_deps
 from bot.logging_config import setup_logging
 from bot.pii import build_default_detector
-from parser.knowledge_schemas import KnowledgeDoc
-from parser.schemas import DeadlineEntry
-from rag.agent.context import AgentContext
+from rag.agent.context import AgentContext, load_deadlines
 from rag.agent.tools import derive_acronyms_from_qdrant
 from rag.embedding.embedder import Embedder, EmbedderConfig
 from rag.experiments.rerankers import RerankingPipeline, build_llm_reranker
@@ -47,11 +44,7 @@ def _build_agent_context(config: BotConfig) -> AgentContext:
     index_config.qdrant_path.mkdir(parents=True, exist_ok=True)
     qdrant_client = _qdrant_client(index_config.qdrant_path)
 
-    doc_adapter: TypeAdapter[KnowledgeDoc] = TypeAdapter(KnowledgeDoc)
-    deadlines: list[DeadlineEntry] = []
-    for jf in sorted(config.knowledge_dir.glob("*.json")):
-        doc = doc_adapter.validate_json(jf.read_text(encoding="utf-8"))
-        deadlines.extend(getattr(doc, "deadlines", []))
+    deadlines = load_deadlines(config.knowledge_dir)
 
     acronyms = derive_acronyms_from_qdrant(
         qdrant_client, index_config.collection_name, config.acronyms_config_path

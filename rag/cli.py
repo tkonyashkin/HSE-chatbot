@@ -1,3 +1,4 @@
+import json
 import os
 from collections.abc import Callable
 from pathlib import Path
@@ -5,10 +6,8 @@ from typing import Any
 
 import typer
 from dotenv import load_dotenv
-from pydantic import TypeAdapter
 
-from parser.knowledge_schemas import KnowledgeDoc
-from parser.schemas import DeadlineEntry
+from rag.agent.context import load_deadlines
 from rag.agent.llm_adapter import build_pydantic_ai_model
 from rag.chunking.io import write_chunks
 from rag.embedding.embedder import Embedder, EmbedderConfig
@@ -19,7 +18,6 @@ from rag.retrieval.pipeline import RetrievalPipeline
 load_dotenv()
 
 app = typer.Typer(help="RAG-стек для HSE-чатбота")
-_KNOWLEDGE_DOC_ADAPTER: TypeAdapter[KnowledgeDoc] = TypeAdapter(KnowledgeDoc)
 
 
 @app.command()
@@ -84,16 +82,6 @@ def query(
         typer.echo(f"  - {url}")
 
 
-def _load_deadlines(knowledge_dir: Path) -> list[DeadlineEntry]:
-    out: list[DeadlineEntry] = []
-    if not knowledge_dir.exists():
-        return out
-    for json_file in sorted(knowledge_dir.glob("*.json")):
-        doc = _KNOWLEDGE_DOC_ADAPTER.validate_json(json_file.read_text(encoding="utf-8"))
-        out.extend(getattr(doc, "deadlines", []))
-    return out
-
-
 @app.command()
 def agent(
     text: str = typer.Argument(..., help="Запрос на естественном языке"),
@@ -115,7 +103,7 @@ def agent(
 
     qdrant_client = _qdrant_client(index_config.qdrant_path)
 
-    deadlines = _load_deadlines(knowledge_dir)
+    deadlines = load_deadlines(knowledge_dir)
     context = AgentContext(
         retrieval=retrieval_pipeline,
         qdrant_client=qdrant_client,
@@ -396,8 +384,6 @@ def experiment(
         baseline_name = "dense_only"
         variant_specs = []
     elif family == "generation_method":
-        import json as _json
-
         from rag.agent.context import AgentContext
         from rag.agent.tools import derive_acronyms_from_qdrant
         from rag.experiments.deepeval_judge import build_judge
@@ -412,7 +398,7 @@ def experiment(
         reranker_model = os.environ.get("RERANKER_MODEL")
         reranker_extra_body_env = os.environ.get("RERANKER_EXTRA_BODY")
         reranker_extra_body = (
-            _json.loads(reranker_extra_body_env) if reranker_extra_body_env else None
+            json.loads(reranker_extra_body_env) if reranker_extra_body_env else None
         )
         reranker_pipeline = RerankingPipeline(
             base=base_pipeline,
@@ -422,7 +408,7 @@ def experiment(
 
         qc = _qdrant_client(index_config.qdrant_path)
 
-        deadlines = _load_deadlines(Path("data/knowledge/2026"))
+        deadlines = load_deadlines(Path("data/knowledge/2026"))
         agent_ctx = AgentContext(
             retrieval=reranker_pipeline,
             qdrant_client=qc,
@@ -562,7 +548,7 @@ def experiment(
         output_path = output_dir / f"{family}.json"
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(
-            _json.dumps(payload_json, ensure_ascii=False, indent=2), encoding="utf-8"
+            json.dumps(payload_json, ensure_ascii=False, indent=2), encoding="utf-8"
         )
         typer.echo(f"Written: {output_path}")
 
@@ -601,11 +587,9 @@ def experiment(
     )
 
     if family == "reranker" and reranker_trackers:
-        import json as _json2
-
         from rag.experiments.cost import cost_per_100q
 
-        payload = _json2.loads(output_path.read_text(encoding="utf-8"))
+        payload = json.loads(output_path.read_text(encoding="utf-8"))
         for vname, tracker in reranker_trackers.items():
             if vname in payload["metrics"]:
                 payload["metrics"][vname]["latency_p50_ms"] = tracker.latency_percentile(0.5)
@@ -613,7 +597,7 @@ def experiment(
                     tracker.total_cost(), len(queries)
                 )
         output_path.write_text(
-            _json2.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
         )
 
     typer.echo(f"Written: {output_path}")

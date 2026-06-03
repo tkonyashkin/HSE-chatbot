@@ -1,147 +1,100 @@
-# HSE Admissions RAG Chatbot
+# Чат-бот для абитуриентов НИУ ВШЭ
 
-Чат-бот для ответов на вопросы о поступлении на бакалавриат НИУ ВШЭ. В репозитории есть:
+Данный репозиторий является кодовой частью курсовой работы по программе «Прикладная математика и информатика» (ФКН НИУ ВШЭ). В работе рассматривается разработка консультационного чат-бота для абитуриентов бакалавриата. Здесь собран весь код, на котором построен отчёт, а именно сбор данных, поисковый пайплайн, агентный слой, Telegram-бот и эксперименты.
 
-- парсер страниц приемной кампании;
-- подготовленные JSON-данные за 2026 год;
-- chunking + локальный Qdrant-индекс;
-- retrieval/generation/agentic RAG;
-- Telegram-бот;
-- golden set и результаты экспериментов.
+## О проекте
 
-## Установка
+Прототип отвечает на вопросы о поступлении в бакалавриат НИУ ВШЭ по официальным материалам университета, среди которых правила приёма, экзамены, проходные баллы, стоимость, сроки и содержание программ. В основе лежит подход Retrieval-Augmented Generation (RAG). Система не придумывает ответ, а сначала находит релевантные фрагменты в корпусе официальных документов, и только потом языковая модель формирует ответ строго по этому контексту и со ссылкой на первоисточник.
 
-Нужен Python 3.11 и `uv`.
+Поверх линейного RAG надстроен агентный слой по схеме «планировщик и исполнитель» (Plan-and-Execute). Подход позволяет не только искать текст, но и фильтровать программы по условиям, сравниваеть их и сопоставлять баллы абитуриента с проходными прошлых лет. Конфигурация поиска (предобработку запроса, разбиение корпуса, модель эмбеддингов, реранкер и модели для ролей) выбралась экспериментально на размеченном наборе запросов.
 
-```bash
-uv sync
+## Как это работает
+
+Система состоит из двух частей. Сначала офлайн собирается и индексируется корпус официальных материалов, а затем онлайн на каждый вопрос строится ответ через агентный слой.
+
+### Подготовка корпуса (офлайн)
+
+```mermaid
+flowchart LR
+    W["HTML страницы НИУ ВШЭ"] --> PA["parser/<br/>очистка и разбор HTML"]
+    PA --> EX["Извлечение данных"]
+    EX --> J["Склейка по программам<br/>67 программ и 5 справочных"]
+    J --> CH["Структурный чанкинг<br/>344 фрагмента"]
+    CH --> EMB["Эмбеддер"]
+    EMB --> Q[("Qdrant<br/>векторный индекс")]
 ```
 
-Создайте `.env`:
+### Ответ на вопрос (онлайн)
 
-```bash
-cp .env.example .env
+```mermaid
+flowchart TD
+    U(["Вопрос пользователя"]) --> PII["Маскирование персональных данных"]
+    PII --> P["Планировщик<br/>определяет тип вопроса и строит план"]
+    P -->|"вне темы"| REF(["Корректный отказ<br/>с пояснением причины"])
+    P -->|"план"| E["Исполнитель<br/>вызывает типизированные инструменты"]
+    E --> S["Семантический поиск"]
+    E --> ETC["Фильтрация"]
+    S --> R["Retrieval"]
+    R --> IDX[("Qdrant<br/>векторный индекс")]
+    E --> A(["Ответ только по найденному контексту,<br/>со ссылками на первоисточник"])
 ```
 
-Заполните:
+## Структура репозитория
 
-```dotenv
+```text
+HSE-chatbot/
+├── parser/         сбор данных с сайта НИУ ВШЭ
+├── rag/            ядро
+│   ├── agent/        планировщик, исполнитель, инструменты
+│   ├── chunking/     нарезка документов на фрагменты
+│   ├── embedding/    перевод текстов в векторное представление
+│   ├── indexing/     векторный индекс (Qdrant)
+│   ├── retrieval/    плотный поиск, BM25, RRF, реранкер
+│   ├── generation/   сбор финального ответа
+│   └── experiments/  эксперименты
+├── bot/            Telegram-бот и защита персональных данных
+├── config/         параметры системы
+├── data/           корпус (67 программ, 5 справочных) и индекс
+└── experiments/    golden-набор запросов и результаты экспериментов
+```
+
+## Запуск
+
+Понадобятся Python 3.11+ и [uv](https://github.com/astral-sh/uv).
+
+```bash
+uv sync                  # установить зависимости
+cp .env.example .env     # заполнить ключи
+uv run hse-rag chunk     # нарезать корпус на фрагменты
+uv run hse-rag index     # построить векторный индекс
+uv run hse-bot           # запустить Telegram-бота
+```
+
+Проверить ответ можно прямо в консоли, без Telegram.
+
+```bash
+uv run hse-rag agent "<запрос>"
+```
+
+### Ключи в `.env`
+
+```
 OPENROUTER_API_KEY=...
-OPENROUTER_MODEL=anthropic/claude-haiku-4.5
 TELEGRAM_BOT_TOKEN=...
-HSE_BOT_CONVERSATION_DB=data/bot/conversations.db
-HSE_KNOWLEDGE_DIR=data/knowledge/2026
+OPENROUTER_MODEL=anthropic/claude-haiku-4.5   # модель по умолчанию
 ```
 
-`OPENROUTER_API_KEY` нужен для парсинга через LLM, генерации ответов, agentic RAG и LLM-экспериментов. Для чистого chunking/index/retrieval без генерации он не нужен.
+## Воспроизведение экспериментов
 
-## Индекс
-
-В репозитории уже есть распарсенные данные в `data/programs/2026` и `data/knowledge/2026`. Локальный индекс не коммитится, его нужно собрать:
+Эксперименты считаются на размеченном golden-наборе (`experiments/golden_set/`). Перед запуском соберите индекс (`chunk` и `index`) и заполните `OPENROUTER_API_KEY`.
 
 ```bash
-uv run hse-rag chunk
-uv run hse-rag index
+uv run hse-rag experiment preprocessing      # сравнение стратегий предобработки запроса
+uv run hse-rag experiment chunking           # сравнение стратегий разбиения корпуса
+uv run hse-rag experiment embedder           # сравнение моделей эмбеддингов
+uv run hse-rag experiment hybrid             # сравнение плотного и гибридного поиска
+uv run hse-rag experiment reranker --llm     # сравнение схем переранжирования
+uv run hse-rag experiment generation_method  # сравнение агентной и линейной генерации
 ```
 
-После этого можно проверить поиск и ответ:
-
-```bash
-uv run hse-rag query "Какие экзамены нужны на программную инженерию?"
-uv run hse-rag agent "Сравни программную инженерию и прикладную математику"
-```
-
-## Telegram-бот
-
-Убедитесь, что заполнены `TELEGRAM_BOT_TOKEN`, `OPENROUTER_API_KEY`, `HSE_BOT_CONVERSATION_DB` и собран индекс.
-
-```bash
-uv run hse-bot
-```
-
-SQLite-файл истории будет создан по пути из `HSE_BOT_CONVERSATION_DB`.
-
-## Обновление данных
-
-Если нужно заново собрать данные с сайта:
-
-```bash
-uv run hse-parser crawl
-uv run hse-parser parse-knowledge
-uv run hse-parser parse-programs
-```
-
-Полезные варианты:
-
-```bash
-uv run hse-parser parse-programs --limit 5
-uv run hse-parser parse-programs --slugs se,ami,math
-uv run hse-parser parse-programs --rerun-failed
-```
-
-После обновления данных пересоберите индекс:
-
-```bash
-uv run hse-rag chunk
-uv run hse-rag index
-```
-
-## Эксперименты
-
-Golden set:
-
-- `experiments/golden_set/validation.yaml`
-- `experiments/golden_set/test.yaml`
-- source labels: `experiments/golden_set/sources/*.tsv`
-
-Перед retrieval-экспериментами соберите индекс:
-
-```bash
-uv run hse-rag chunk
-uv run hse-rag index
-```
-
-Воспроизвести validation-эксперименты:
-
-```bash
-uv run hse-rag experiment preprocessing
-uv run hse-rag experiment reranker
-uv run hse-rag experiment chunking
-uv run hse-rag experiment embedder
-uv run hse-rag experiment hybrid
-```
-
-LLM-варианты для preprocessing/reranker:
-
-```bash
-uv run hse-rag experiment preprocessing --llm
-uv run hse-rag experiment reranker --llm
-```
-
-Эксперимент генерации на test split:
-
-```bash
-RERANKER_MODEL=deepseek/deepseek-v4-flash \
-RERANKER_EXTRA_BODY='{"reasoning":{"enabled":false}}' \
-uv run hse-rag experiment generation_method \
-  --queries-path experiments/golden_set/test.yaml \
-  --sources-path experiments/golden_set/sources/test.tsv \
-  --output-dir experiments/results/test
-```
-
-Standalone-эксперименты:
-
-```bash
-uv run python -m rag.experiments.eval_plan_accuracy
-uv run python -m rag.experiments.eval_executor_model
-```
-
-Результаты пишутся в `experiments/results/validation` или в указанный `--output-dir`.
-
-## Проверки
-
-```bash
-uv run ruff check .
-uv run mypy .
-uv run python -m compileall -q bot parser rag
-```
+Каждая серия пишет результат в `experiments/results/` в формате JSON.

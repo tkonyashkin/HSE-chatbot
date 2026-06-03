@@ -8,17 +8,15 @@ from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
-from pydantic import TypeAdapter
 
-from parser.knowledge_schemas import KnowledgeDoc
-from parser.schemas import DeadlineEntry
-from rag.agent.context import AgentContext
+from rag.agent.context import AgentContext, load_deadlines
 from rag.agent.runner import run_agent_planned_sync
 from rag.agent.tools import derive_acronyms_from_qdrant
 from rag.embedding.embedder import Embedder, EmbedderConfig
 from rag.experiments.dataset import load_queries
 from rag.experiments.deepeval_judge import build_judge
 from rag.experiments.eval_generation import compute_metrics
+from rag.experiments.paths import safe_model_slug
 from rag.experiments.preprocessors import expand_acronyms
 from rag.experiments.rerankers import RerankingPipeline, build_llm_reranker
 from rag.indexing.indexer import IndexerConfig
@@ -38,22 +36,8 @@ PLANNER_MODEL = "anthropic/claude-sonnet-4.6"
 RERANKER_MODEL = "deepseek/deepseek-v4-flash"
 RERANKER_EXTRA_BODY: dict[str, object] = {"reasoning": {"enabled": False}}
 
-_KNOWLEDGE_DOC_ADAPTER: TypeAdapter[KnowledgeDoc] = TypeAdapter(KnowledgeDoc)
-
-
-def _load_deadlines(knowledge_dir: Path) -> list[DeadlineEntry]:
-    out: list[DeadlineEntry] = []
-    if not knowledge_dir.exists():
-        return out
-    for json_file in sorted(knowledge_dir.glob("*.json")):
-        doc = _KNOWLEDGE_DOC_ADAPTER.validate_json(json_file.read_text(encoding="utf-8"))
-        out.extend(getattr(doc, "deadlines", []))
-    return out
-
-
 def _cache_path_for(model_id: str) -> Path:
-    safe = model_id.replace("/", "_").replace("-", "_").replace(".", "_").replace("#", "_")
-    return Path("experiments/cache") / f"executor_{safe}.json"
+    return Path("experiments/cache") / f"executor_{safe_model_slug(model_id)}.json"
 
 
 REASONING_ON_SUFFIX = "#reasoning_on"
@@ -76,7 +60,7 @@ def build_context(
     index_config = IndexerConfig.from_yaml(retrieval_config_path, dim=emb_config.dim)
     retrieval = RetrievalPipeline(embedder=embedder, index_config=index_config)
     qc = _qdrant_client(index_config.qdrant_path)
-    deadlines = _load_deadlines(knowledge_dir)
+    deadlines = load_deadlines(knowledge_dir)
     reranker_pipe = RerankingPipeline(
         base=retrieval,
         reranker=build_llm_reranker(model_id=RERANKER_MODEL, extra_body=RERANKER_EXTRA_BODY),

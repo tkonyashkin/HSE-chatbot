@@ -7,17 +7,15 @@ from typing import Any
 
 import yaml
 
+from rag.agent.query_normalization import expand_acronyms_in_query
+
 
 def raw(query: str) -> str:
     return query
 
 
 def expand_acronyms(text: str, acronyms: dict[str, str]) -> str:
-    out = text
-    for acr in sorted(acronyms.keys(), key=len, reverse=True):
-        pattern = re.compile(rf"\b{re.escape(acr)}\b", re.IGNORECASE)
-        out = pattern.sub(f"{acr} ({acronyms[acr]})", out)
-    return out
+    return expand_acronyms_in_query(text, acronyms)
 
 
 @lru_cache(maxsize=1)

@@ -4,6 +4,7 @@ import re
 from typing import Any
 
 TOKEN_RE = re.compile(r"[A-Za-zА-Яа-яЁё0-9.]+")
+CYRILLIC_RE = re.compile(r"[а-я]")
 _MORPH: Any | None = None
 
 
@@ -32,7 +33,7 @@ def normalize_ru_tokens(
     morph = get_morph()
     normalized: list[str] = []
     for token in tokens:
-        if re.search(r"[а-я]", token):
+        if CYRILLIC_RE.search(token):
             normalized.append(morph.parse(token)[0].normal_form.replace("ё", "е"))
         else:
             normalized.append(token)

@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 from rag.agent.planner import Intent, build_planner
 from rag.experiments.cost import PRICING
 from rag.experiments.dataset import Query, load_queries
+from rag.experiments.paths import safe_model_slug
 
 load_dotenv()
 
@@ -82,8 +83,7 @@ def build_payload(rows: list[dict[str, Any]], with_confusion: bool = True) -> di
 
 
 def _cache_path_for(model_id: str) -> Path:
-    safe = model_id.replace("/", "_").replace("-", "_").replace(".", "_")
-    return Path("experiments/cache") / f"planner_{safe}.json"
+    return Path("experiments/cache") / f"planner_{safe_model_slug(model_id)}.json"
 
 
 async def run_for_model(

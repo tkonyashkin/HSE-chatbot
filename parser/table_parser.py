@@ -27,11 +27,15 @@ SECTION_HEADER_RE = re.compile(
     r"^\|\s*(?:Направление подготовки|Специальность)\s+(\d{2}\.\d{2}\.\d{2})\s+(.+?)\s*\|",
 )
 
+DIGITS_RE = re.compile(r"\d+")
+DIGIT_RE = re.compile(r"\d")
+URL_HOST_RE = re.compile(r"^https?://([^/]+)")
+
 
 def slug_from_url(url: str) -> str:
     if "/ba/" in url:
         return url.split("/ba/", 1)[1].rstrip("/").split("/", 1)[0].split("?", 1)[0]
-    host_match = re.match(r"^https?://([^/]+)", url)
+    host_match = URL_HOST_RE.match(url)
     if host_match is None:
         return ""
     host = host_match.group(1)
@@ -160,12 +164,12 @@ def parse_kolmest_cells(cells: list[str]) -> Places:
         cell = cell.strip()
         if not cell or cell == "-":
             return None
-        m = re.search(r"\d+", cell)
+        m = DIGITS_RE.search(cell)
         if not m:
             return None
         return QuotedInt(value=int(m.group()), quote=cell[:200])
 
-    numeric_start = 1 if cells and not re.search(r"\d", cells[0]) else 0
+    numeric_start = 1 if cells and not DIGIT_RE.search(cells[0]) else 0
 
     def at(idx: int) -> QuotedInt | None:
         actual = numeric_start + idx
@@ -202,7 +206,7 @@ def parse_price_table(markdown: str, year: int) -> list[TablePriceRow]:
         if not slug:
             continue
         cells = [c.strip() for c in prog_match.group(3).split("|") if c.strip()]
-        digits = re.search(r"\d+", cells[-1] if cells else "")
+        digits = DIGITS_RE.search(cells[-1] if cells else "")
         if not digits:
             continue
 
@@ -263,7 +267,7 @@ def parse_result_cells(cells: list[str], year: int) -> PassingScore | None:
 
         if not cell or cell.startswith("-"):
             return None
-        m = re.search(r"\d+", cell)
+        m = DIGITS_RE.search(cell)
         if not m:
             return None
         return QuotedInt(value=int(m.group()), quote=cell)

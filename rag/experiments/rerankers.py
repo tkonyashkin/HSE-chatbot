@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from rag.experiments.llm_preprocessors import load_prompt_template
+from rag.experiments.paths import safe_model_slug
 from rag.experiments.runner import RetrievalPipeline
 from rag.schemas import RetrievalHit
 
@@ -118,9 +119,7 @@ def build_llm_reranker(
 ) -> Any:
     from rag.experiments.llm_preprocessors import default_llm_call
 
-    suffix = ""
-    if model_id:
-        suffix = "_" + model_id.replace("/", "_").replace("-", "_").replace(".", "_")
+    suffix = f"_{safe_model_slug(model_id)}" if model_id else ""
     return LLMReranker(
         llm_call=default_llm_call(model_id=model_id, tracker=tracker, extra_body=extra_body),
         cache_path=cache_dir / f"llm_reranker{suffix}.json",

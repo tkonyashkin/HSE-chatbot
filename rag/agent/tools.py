@@ -56,6 +56,23 @@ MATCH_DISCLAIMER = (
 
 NON_EGE_EXAM_MARKERS = ("творческое", "профессиональный", "дви")
 
+CYRILLIC_WORD_RE = re.compile(r"[А-Яа-я]+")
+RU_STOPWORDS = {"и", "в", "на", "из", "о", "по", "к", "с", "у", "от"}
+
+
+def _acronym_for_name(name: str, existing: dict[str, str]) -> tuple[str, str] | None:
+    words = [
+        w
+        for w in CYRILLIC_WORD_RE.findall(name)
+        if len(w) >= 3 and w.lower() not in RU_STOPWORDS
+    ]
+    if not (2 <= len(words) <= 5):
+        return None
+    acronym = "".join(w[0].upper() for w in words)
+    if not (2 <= len(acronym) <= 5) or acronym in existing:
+        return None
+    return acronym, name
+
 
 def payload_to_summary(payload: dict[str, Any]) -> ProgramSummary:
     facts = payload.get("extracted_facts", {}) or {}
@@ -197,9 +214,6 @@ def compare_programs(ctx: AgentContext, slugs: list[str], aspects: list[str]) ->
     return ComparisonTable(programs=summaries, comparison=comparison)
 
 
-RU_STOPWORDS = {"и", "в", "на", "из", "о", "по", "к", "с", "у", "от"}
-
-
 def load_universal_acronyms(path: Path) -> dict[str, str]:
     if not path.exists():
         return {}
@@ -225,15 +239,9 @@ def derive_acronyms_from_qdrant(
         name = payload.get("program_name", "")
         if not name:
             continue
-        words = [
-            w
-            for w in re.findall(r"[А-Яа-я]+", name)
-            if len(w) >= 3 and w.lower() not in RU_STOPWORDS
-        ]
-        if 2 <= len(words) <= 5:
-            acronym = "".join(w[0].upper() for w in words)
-            if 2 <= len(acronym) <= 5 and acronym not in acronyms:
-                acronyms[acronym] = name
+        derived = _acronym_for_name(name, acronyms)
+        if derived is not None:
+            acronyms[derived[0]] = derived[1]
     return acronyms
 
 
@@ -251,15 +259,9 @@ def load_program_acronyms_from_disk(
         if name:
             names.append(name)
     for name in sorted(names):
-        words = [
-            w
-            for w in re.findall(r"[А-Яа-я]+", name)
-            if len(w) >= 3 and w.lower() not in RU_STOPWORDS
-        ]
-        if 2 <= len(words) <= 5:
-            acronym = "".join(w[0].upper() for w in words)
-            if 2 <= len(acronym) <= 5 and acronym not in acronyms:
-                acronyms[acronym] = name
+        derived = _acronym_for_name(name, acronyms)
+        if derived is not None:
+            acronyms[derived[0]] = derived[1]
     return acronyms
 
 
