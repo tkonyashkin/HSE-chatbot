@@ -80,6 +80,10 @@ def md_to_telegram_html(text: str) -> str:
 
     def repl_link(m: re.Match[str]) -> str:
         label = escape_html(m.group(1))
+        label = BOLD_STAR_RE.sub(r"<b>\1</b>", label)
+        label = BOLD_UNDER_RE.sub(r"<b>\1</b>", label)
+        label = ITALIC_STAR_RE.sub(r"<i>\1</i>", label)
+        label = ITALIC_UNDER_RE.sub(r"<i>\1</i>", label)
         url = m.group(2).replace('"', "%22")
         return stash(f'<a href="{url}">{label}</a>', "LN")
 

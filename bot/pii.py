@@ -16,8 +16,6 @@ class PIIType(StrEnum):
     birthdate = "BIRTHDATE"
     diploma = "DIPLOMA"
     person = "PERSON"
-    location = "LOCATION"
-    organization = "ORGANIZATION"
 
 
 @dataclass(frozen=True)
@@ -152,8 +150,6 @@ def ner_detect(text: str, ner_pipeline: NERPipeline | None) -> list[PIISpan]:
 
     type_map = {
         "PER": PIIType.person,
-        "LOC": PIIType.location,
-        "ORG": PIIType.organization,
     }
     spans: list[PIISpan] = []
     for ent in entities:
